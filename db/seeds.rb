@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+City.delete_all
+ 
+puts "Creating cities"
+ 
+cities = City.create([{name: "Cape Town", description: "The Mother City"}, {name: "New York", description: "The Big Apple"}])
+
+puts "Creating campaigns"
+
+campaigns = Campaign.create({[]})
