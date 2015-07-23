@@ -3,7 +3,7 @@
   <strong>Campaign:</strong>
   <%= campaign.name %>
   <%= campaign.description %>
-	<td><%= link_to 'Delete', city_path(city), 
+	<td><%= link_to 'Delete', [campaign.city, campaign],
 		method: :delete,
 			data: { confirm: 'Are you sure?' }  %></td>
 </p>

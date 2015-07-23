@@ -1,5 +1,8 @@
 class CampaignsController < ApplicationController
 
+	def show
+	end
+	
 	def create
 		@city = City.find(params[:city_id])
 		@campaign = @city.campaigns.create(campaign_params)
@@ -26,7 +29,7 @@ class CampaignsController < ApplicationController
 		@city = City.find(params[:city_id])
 		@campaign = @city.campaigns.find(params[:id])
 		@campaign.destroy
-		redirect_to city_campaigns_path(@city, @campaign)
+		redirect_to city_path(@city)
 	end
 
 private
