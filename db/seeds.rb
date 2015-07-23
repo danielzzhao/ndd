@@ -12,6 +12,6 @@ puts "Creating cities"
  
 cities = City.create([{name: "Cape Town", description: "The Mother City"}, {name: "New York", description: "The Big Apple"}])
 
-puts "Creating campaigns"
+# puts "Creating campaigns"
 
-campaigns = Campaign.create({[]})
+# campaigns = Campaign.create({[]})
