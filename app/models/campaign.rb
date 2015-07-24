@@ -1,3 +1,3 @@
 class Campaign < ActiveRecord::Base
-	belongs to :city
+	belongs_to :city
 end

@@ -1,0 +1,10 @@
+<p>
+<%= @city.name %>
+<%= @city.description %>
+</p>
+
+<h2>Campaigns</h2>
+<%= render @city.campaigns %>
+
+<h1>Add a Campaign</h1>
+<%= render 'campaigns/form' %>
