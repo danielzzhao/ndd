@@ -6,7 +6,7 @@ class TasksController < ApplicationController
 	end
 
 	def show
-		@tasks = cit
+		@tasks = City.find(params[:id])
 	end
 
 	def new
