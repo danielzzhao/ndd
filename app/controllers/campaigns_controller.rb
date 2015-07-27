@@ -1,6 +1,8 @@
 class CampaignsController < ApplicationController
 
-	def show
+	def index
+	    @city = City.find(params[:city_id])
+	    @campaigns = @city.campaigns.all
 	end
 	
 	def create

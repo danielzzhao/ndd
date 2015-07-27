@@ -1,0 +1,14 @@
+<%= form_for [@city, @city.tasks.build] do |f| %>
+
+	<div>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+
+	<div>
+		<%=f.label :description %>
+		<%= f.text_field :description %>	
+	</div>
+
+	<%= f.submit %>
+<% end %>

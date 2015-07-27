@@ -1,10 +1,10 @@
-<p>
+<h1>
 <%= @city.name %>
 <%= @city.description %>
-</p>
+</h1>
 
-<h2>Campaigns</h2>
-<%= render @city.campaigns %>
+<%= render @city.tasks %>
 
-<h1>Add a Campaign</h1>
-<%= render 'campaigns/form' %>
+ <%= link_to 'New Task', new_city_task_path(@city) %>
+ <%= link_to 'Campaigns', city_campaigns_path(@city) %>
+
