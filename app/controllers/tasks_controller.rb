@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def index    
     @city = City.find(params[:city_id])
+    @task = @city.tasks.find(params[:id])
     @tasks = @city.tasks.all
   end
 
