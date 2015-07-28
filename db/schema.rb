@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723092107) do
+ActiveRecord::Schema.define(version: 20150728093705) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
@@ -37,12 +37,13 @@ ActiveRecord::Schema.define(version: 20150723092107) do
     t.string   "name"
     t.text     "description"
     t.integer  "amount_raised"
-    t.string   "image"
+    t.string   "youtube_url"
     t.boolean  "dreamer"
     t.boolean  "complete"
     t.integer  "city_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "image"
   end
 
   add_index "tasks", ["city_id"], name: "index_tasks_on_city_id"
