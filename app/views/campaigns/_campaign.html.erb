@@ -1,9 +1,44 @@
  
-<p>
-  <strong>Campaign:</strong>
-  <%= campaign.name %>
-  <%= campaign.description %>
-	<td><%= link_to 'Delete', [campaign.city, campaign],
-		method: :delete,
-			data: { confirm: 'Are you sure?' }  %></td>
-</p>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<% @campaigns.each do |campaign| %>
+				<% if campaign.complete == true %>
+					<p>
+						<strong>Campaign:</strong>
+						<%= campaign.name %>
+						<%= campaign.date %>
+						<%= campaign.image %>
+						<%= campaign.description %>
+						<%= campaign.website %>
+						<td><%= link_to 'Delete', [campaign.city, campaign],
+							method: :delete,
+							data: { confirm: 'Are you sure?' }  %></td>
+					</p>
+				<% end %>
+			<% end %>
+		</div>
+
+		<div class="col-md-6">
+			<% @campaigns.each do |campaign| %>
+				<% if campaign.complete == false %>
+					<p>
+						<strong>Campaign:</strong>
+						<%= campaign.name %>
+						<%= campaign.date %>
+						<%= campaign.image %>
+						<%= campaign.description %>
+						<%= campaign.website %>
+						<td><%= link_to 'Delete', [campaign.city, campaign],
+							method: :delete,
+							data: { confirm: 'Are you sure?' }  %></td>
+					</p>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+
+
