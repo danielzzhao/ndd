@@ -39,6 +39,7 @@ ul {
 						<li><%= campaign.image %></li>
 						<li><%= campaign.description %></li>
 						<li><%= campaign.website %></li>
+						<li><%= link_to 'Edit', edit_city_campaign_path(@city, campaign) %></li>
 						<li><%= link_to 'Delete', [campaign.city, campaign],
 							method: :delete,
 							data: { confirm: 'Are you sure?' }  %></li>

@@ -48,8 +48,6 @@ class TasksController < ApplicationController
     @city = Course.find(params[:city_id])
     @task = @city.tasks.find(params[:id])
     @task.destroy
-    # redirect_to course_tdls_path(@city)
-    redirect_to user_course_path(current_user, @city)
   end
 
   private
