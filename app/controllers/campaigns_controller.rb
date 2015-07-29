@@ -5,10 +5,16 @@ class CampaignsController < ApplicationController
 	    @campaigns = @city.campaigns.all
 	end
 	
+	def new
+	    @city = City.find(params[:city_id])
+	    @campaign = @city.campaigns.new
+  	end
+
 	def create
 		@city = City.find(params[:city_id])
 		@campaign = @city.campaigns.create(campaign_params)
-		redirect_to city_path(@city, @campaign)
+		@campaign.save
+		redirect_to city_campaigns_path(@city, @campaign)
 	end
 
 	def edit
@@ -21,7 +27,7 @@ class CampaignsController < ApplicationController
 		@campaign = @city.campaigns.find(params[:id])
 
 		if @campaign.update(campaign_params)
-			redirect_to 
+			redirect_to city_campaigns_path(@city, @campaign)
 		else
 			render 'edit'
 		end
@@ -31,7 +37,7 @@ class CampaignsController < ApplicationController
 		@city = City.find(params[:city_id])
 		@campaign = @city.campaigns.find(params[:id])
 		@campaign.destroy
-		redirect_to city_path(@city)
+		redirect_to city_campaigns_path(@city, @campaign)
 	end
 
 private
