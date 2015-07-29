@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728134933) do
+ActiveRecord::Schema.define(version: 20150729112555) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
@@ -151,6 +151,15 @@ ActiveRecord::Schema.define(version: 20150728134933) do
 
   add_index "comfy_cms_snippets", ["site_id", "identifier"], name: "index_comfy_cms_snippets_on_site_id_and_identifier", unique: true
   add_index "comfy_cms_snippets", ["site_id", "position"], name: "index_comfy_cms_snippets_on_site_id_and_position"
+
+  create_table "employees", force: :cascade do |t|
+    t.string   "name"
+    t.text     "bio"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "city_id"
+  end
 
   create_table "tasks", force: :cascade do |t|
     t.string   "name"

@@ -1,4 +1,42 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+</head>
 
-<%= link_to 'Get started', cities_path %>
+<style>
+
+body {
+	background-color: rgba(0,0,0,.7);
+	color: white;
+	font-family: 'Abel', sans-serif;
+	text-align: center;
+}
+
+body::after {
+  content: "";
+  background: url("http://www.nodangerdiaries.com/joy/wp-content/uploads/2014/08/Screen-Shot-2015-05-25-at-3.44.45-PM.png");
+  background-size: cover;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+h1 {
+	font-size: 60;
+	letter-spacing: 5px;
+}
+
+p {
+	font-size: 30px;
+}
+
+</style>
+
+<body>
+	<h1>No Danger</br>Diaries</h1>
+
+	<p><%= link_to 'Get started', cities_path %></p>
+</body>

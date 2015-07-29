@@ -1,0 +1,12 @@
+
+<body>
+	<h1>Meet the Team</h1>
+
+	<% @employees.each do |employee| %>
+		<h2><%= @employee.name %></h2>
+		<P><%= @employee.image %></P>
+		<p><%= @employee.bio %></p>
+	<% end %>
+</body>
+
+<%= link_to "Add an Employee", new_city_employee_path(@city) %>
