@@ -54,7 +54,8 @@ class TasksController < ApplicationController
 
   private
       def task_params
-        params.require(:task).permit(:name, :description, :youtube_url, :image, :complete, :dreamer) #add more later)
+        params.require(:task).permit(:name, :description, :amount_raised, 
+        :total_amount, :youtube_url, :image, :complete, :dreamer) #add more later)
       end
 end
 

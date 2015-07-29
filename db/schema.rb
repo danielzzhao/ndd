@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728093705) do
+ActiveRecord::Schema.define(version: 20150728134933) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
@@ -155,7 +155,7 @@ ActiveRecord::Schema.define(version: 20150728093705) do
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "amount_raised"
+    t.float    "amount_raised"
     t.string   "youtube_url"
     t.boolean  "dreamer"
     t.boolean  "complete"
@@ -163,6 +163,7 @@ ActiveRecord::Schema.define(version: 20150728093705) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "image"
+    t.float    "total_amount"
   end
 
   add_index "tasks", ["city_id"], name: "index_tasks_on_city_id"

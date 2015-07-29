@@ -22,6 +22,17 @@
 	</div>
 
 	<div>
+		<%=f.label 'Current Amount raised - put zero if nothing' %>
+		<%= f.text_field :amount_raised %>	
+	</div>
+
+
+	<div>
+		<%=f.label 'Projected amount' %>
+		<%= f.text_field :total_amount %>	
+	</div>
+
+	<div>
 		<%=f.label :complete %>
 		<%= f.check_box :complete %>
 	</div>
