@@ -17,7 +17,7 @@
 			      <h4 class="panel-title">
 			        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 			        <%= task.name %>
-			         <%= progress_bar((task.amount_raised/task.total_amount*100), :color => 'blue', :rounded => true) %>  
+			        <%= progress_bar((task.amount_raised/task.total_amount*100), :color => 'blue', :rounded => true) %>  
 			        </a>
 			      </h4>
 			    </div>
@@ -25,9 +25,13 @@
 			      <div class="panel-body">
 					<p><%= task.name %></p>
 					<p><%= task.description %></p>
+					<% if task.youtube_url.include? 'youtube' || 'youtu.be' %>
 						<div class="embed-container"> 
 							<p><%= embed(task.youtube_url) %></p>
 						</div>
+					<% else %>
+						<%= image_tag task.image %>
+					<% end %>
 			      </div>
 			    </div>
 			  </div>
@@ -51,11 +55,16 @@
 					    </div>
 					    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 					      <div class="panel-body">
+					      
 							<p><%= task.name %></p>
-							<p><%= task.description %></p>
-								<div class="embed-container"> 
-							<p><%= embed(task.youtube_url) %></p>
-								</div>
+								<p><%= task.description %></p>
+								<% if task.youtube_url.include? 'youtube' || 'youtu.be' %>
+									<div class="embed-container"> 
+										<p><%= embed(task.youtube_url) %></p>
+									</div>
+								<% else %>
+									<%= image_tag task.image %>
+								<% end %>
 					      </div>
 					    </div>
 					  </div>

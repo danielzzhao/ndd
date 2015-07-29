@@ -46,6 +46,9 @@ class CitiesController < ApplicationController
 		redirect_to cities_path
 	end 
 
+	def ambassador
+	end
+
 	def city_params
 		params.require(:city).permit(:name, :description, :image)
 	end
