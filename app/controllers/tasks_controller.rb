@@ -1,8 +1,31 @@
 class TasksController < ApplicationController
-  def index    
+  def index
+    # @filterrific = initialize_filterrific(
+    #     Student,
+    #     params[:filterrific],
+    #     select_options: {
+    #       sorted_by: Student.options_for_sorted_by,
+    #       with_country_id: Country.options_for_select
+    #     },
+    #     # persistence_id: 'false',
+    #     # default_filter_params: {},
+    #     # available_filters: [],
+    #   ) or return   
+
     @city = City.find(params[:city_id])
     @task = @city.tasks.find(params[:id])
     @tasks = @city.tasks.all
+
+    # respond_to do |format|
+    # format.html
+    # format.js
+    # end
+
+    # rescue ActiveRecord::RecordNotFound => e
+    # # There is an issue with the persisted param_set. Reset it.
+    # puts "Had to reset filterrific params: #{ e.message }"
+    # redirect_to(reset_filterrific_url(format: :html)) and return
+    # end
   end
 
   def show

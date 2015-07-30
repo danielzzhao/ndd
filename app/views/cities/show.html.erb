@@ -10,18 +10,18 @@
 		<div class="col-md-6">
 			<h2>Complete Tasks:</h2>
 			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-			<% @tasks.each do |task| %>
+			<% @tasks.each_with_index do |task, index| %>
 				<% if task.complete == true %>
 			  <div class="panel panel-default">
 			    <div class="panel-heading" role="tab" id="headingOne">
 			      <h4 class="panel-title">
-			        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+			        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
 			        <%= task.name %>
-			        <%= progress_bar((task.amount_raised/task.total_amount*100), :color => 'blue', :rounded => true) %>  
+			        <%= progress_bar((task.amount_raised/task.total_amount*100), :color => 'blue', :rounded => true) %>
 			        </a>
 			      </h4>
 			    </div>
-			    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+			    <div id="collapse<%= index %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<%= index %>">
 			      <div class="panel-body">
 					<p><%= task.name %></p>
 					<p><%= task.description %></p>
@@ -43,20 +43,20 @@
 		<div class="col-md-6">
 			<h2>Incomplete Tasks:</h2>
 			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-				<% @tasks.each do |task| %>
+				<% @tasks.each_with_index do |task, index| %>
 					<% if task.complete == false %>
 					  <div class="panel panel-default">
 					    <div class="panel-heading" role="tab" id="headingOne">
 					      <h4 class="panel-title">
-					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
 								<%= task.name %>
+								<%= progress_bar((task.amount_raised/task.total_amount*100), :color => 'blue', :rounded => true) %>
 					        </a>
 					      </h4>
 					    </div>
-					    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+					    <div id="collapse<%= index %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<%= index %>">
 					      <div class="panel-body">
-					      
-							<p><%= task.name %></p>
+					      	<p><%= task.name %></p>
 								<p><%= task.description %></p>
 								<% if task.youtube_url.include? 'youtube' || 'youtu.be' %>
 									<div class="embed-container"> 
