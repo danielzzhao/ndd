@@ -1,25 +1,32 @@
 class TasksController < ApplicationController
   def index
-    # @filterrific = initialize_filterrific(
-    #     Student,
-    #     params[:filterrific],
-    #     select_options: {
-    #       sorted_by: Student.options_for_sorted_by,
-    #       with_country_id: Country.options_for_select
-    #     },
-    #     # persistence_id: 'false',
-    #     # default_filter_params: {},
-    #     # available_filters: [],
-    #   ) or return   
+    @filterrific = initialize_filterrific(
+        Task,
+        params[:filterrific],
+        :select_options => {
+          #sorted_by: Task.options_for_sorted_by,
+          with_city_id: City.options_for_select,
+          # with_complete: ['Completed', 'Incomplete']
+          # with_dreamer: Task.options_for_select
+        },
+        # persistence_id: 'false',
+        # default_filter_params: {},
+        # available_filters: %w[
+        #   with_city_id
+        #   with_complete
+        #   with_dreamer
+        #   ]
+      ) or return   
+    @tasks = @filterrific.find.page(params[:page])
 
-    @city = City.find(params[:city_id])
-    @task = @city.tasks.find(params[:id])
-    @tasks = @city.tasks.all
+    # @city = City.find(params[:city_id])
+    # #@task = @city.tasks.find(params[:id])
+    # @tasks = @city.tasks.all
 
-    # respond_to do |format|
-    # format.html
-    # format.js
-    # end
+    respond_to do |format|
+    format.html
+    format.js
+    end
 
     # rescue ActiveRecord::RecordNotFound => e
     # # There is an issue with the persisted param_set. Reset it.

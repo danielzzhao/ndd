@@ -4,12 +4,15 @@
 
   <table>
     <tr>
-      <th>Name</th>
       <th>City</th>
+      <td>Complete?</td>
+      <td>Dreamer?</td>
     </tr>
     <% tasks.each do |task| %>
       <tr>
-        <td><%= task.city_id %></td>
+      <td><%= task.name %></td>
+      <td><%= task.complete %></td>
+      <td><%= task.dreamer %></td>
       </tr>
     <% end %>
   </table>

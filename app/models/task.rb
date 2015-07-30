@@ -1,10 +1,10 @@
 class Task < ActiveRecord::Base
   validates :name, :description, presence: true
-    belongs_to :city
+
   filterrific(
-  default_filter_params: { sorted_by: 'created_at_desc' },
+  #default_filter_params: { sorted_by: 'created_at_desc' },
   available_filters: [
-    :sorted_by,
+    #:sorted_by,
     #:search_query,
     :with_city_id,
     :with_complete,
@@ -12,18 +12,20 @@ class Task < ActiveRecord::Base
   ]
 )
   # associations
+     belongs_to :city
 
-  # filters on 'country_id' foreign key
+  # filters on 'city_id' foreign key
 	scope :with_city_id, lambda { |city_ids|
-  	where(country_id: [*city_ids])
+  	where(city_id: [*city_ids])
 	}
 
-  # filters on 'gender' attribute
-	scope :with_complete, lambda { |completes|
-  	where(complete: [*completes])
-	}
+  # filters on 'complete' attribute
+	scope :with_complete, lambda { |flag|
+    return nil  if 0 == flag # checkbox unchecked
+    where(complete: true)
+  }
 
-	# filters on 'gender' attribute
+	# filters on 'dreamer' attribute
 	scope :with_dreamer, lambda { |dreamers|
 	where(dreamer: [*dreamers])
 	}

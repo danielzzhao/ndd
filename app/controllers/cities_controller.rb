@@ -1,13 +1,12 @@
 class CitiesController < ApplicationController
 
-
 	def index
 		@cities = City.all
 	end
 
 	def show
 		@city = City.find(params[:id])
-		#@task = @city.tasks.find(params[:id])
+		#@task = @city.tasks.find(params[:id]) idk what this line does?
     	@tasks = @city.tasks.all
 	end
 
