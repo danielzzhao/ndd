@@ -26,7 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'comfortable_mexican_sofa'
 gem 'css3-progress-bar-rails'
 
-
+gem 'filterrific'
 gem "twitter-bootstrap-rails"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
