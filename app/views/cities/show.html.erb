@@ -15,13 +15,13 @@
 			  <div class="panel panel-default">
 			    <div class="panel-heading" role="tab" id="headingOne">
 			      <h4 class="panel-title">
-			        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
+			        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index %>" aria-expanded="false" aria-controls="collapse<%= index %>">
 			        <%= task.name %>
 			        <%= progress_bar((task.amount_raised/task.total_amount*100), :color => 'blue', :rounded => true) %>
 			        </a>
 			      </h4>
 			    </div>
-			    <div id="collapse<%= index %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<%= index %>">
+			    <div id="collapse<%= index %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= index %>">
 			      <div class="panel-body">
 					<p><%= task.name %></p>
 					<p><%= task.description %></p>
@@ -48,13 +48,13 @@
 					  <div class="panel panel-default">
 					    <div class="panel-heading" role="tab" id="headingOne">
 					      <h4 class="panel-title">
-					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
+					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=index %>" aria-expanded="false" aria-controls="collapse<%= index %>">
 								<%= task.name %>
 								<%= progress_bar((task.amount_raised/task.total_amount*100), :color => 'blue', :rounded => true) %>
 					        </a>
 					      </h4>
 					    </div>
-					    <div id="collapse<%= index %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<%= index %>">
+					    <div id="collapse<%= index %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= index %>">
 					      <div class="panel-body">
 					      	<p><%= task.name %></p>
 								<p><%= task.description %></p>

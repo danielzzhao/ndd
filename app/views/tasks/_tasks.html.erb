@@ -1,0 +1,23 @@
+<div id="filterrific_results">
+
+  <div>
+    <%= page_entries_info tasks # provided by will_paginate %>
+  </div>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+    </tr>
+    <% tasks.each do |task| %>
+      <tr>
+        <td><%= link_to(task.full_name, task_path(task)) %></td>
+        <td><%= task.email %></td>
+        <td><%= task.country_name %></td>
+        <td><%= task.decorated_created_at %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<%= will_paginate tasks # provided by will_paginate %>
