@@ -1,20 +1,34 @@
-<h1>Cities</h1>
+<style>
+/*
+.circular {
+	border: 2px solid;
+	border-radius: 25px;
+}*/
 
-<%= link_to 'Add New City', new_city_path %>
+</style>
 
 
+<body>
+	<div class="container">
 
-<% @cities.each do |city| %>
-	<tr></br>
-		<td><%= city.name %></td>
-		<td><%= city.description %></td>
-		<td><%= link_to 'Show', city_path(city) %></td>
-		<td><%= link_to 'Edit', edit_city_path(city) %></td>
-		<td><%= link_to 'Delete', city_path(city), 
-			method: :delete,
-				data: { confirm: 'Are you sure?' }  %></td>
-	</tr>
-<% end %>
+	<h1>Cities</h1>
 
-</br><%= link_to "Don't see your city?", cities_ambassador_path %>
+	<%= link_to 'Add New City', new_city_path %>
+
+		<% @cities.each do |city| %>
+			<tr></br>
+				<td><div class="circular"><%= image_tag city.image %></div></td> </br>
+				<td><%= city.name %></td>
+				<td><%= link_to 'Show', city_path(city) %></td>
+				<td><%= link_to 'Edit', edit_city_path(city) %></td>
+				<td><%= link_to 'Delete', city_path(city), 
+					method: :delete,
+						data: { confirm: 'Are you sure?' }  %></td>
+			</tr>
+		<% end %>
+
+		</br><%= link_to "Don't see your city?", cities_ambassador_path %>
+
+	</div>
+</body>
 

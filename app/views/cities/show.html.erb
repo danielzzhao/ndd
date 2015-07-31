@@ -2,7 +2,6 @@
 	<div class="container">
 		<h1>
 		<%= @city.name %>
-		<%= @city.description %>
 		</h1>
 
 <div class="container">
@@ -80,6 +79,7 @@
 		 <%= link_to 'New Task', new_city_task_path(@city) %>
 		 <%= link_to 'Campaigns', city_campaigns_path(@city) %>
 		 <%= link_to 'Meet the team', city_employees_path(@city) %>
+		 <%= link_to 'Back to Cities', cities_path %>
 
 </div>
 

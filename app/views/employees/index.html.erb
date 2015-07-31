@@ -3,10 +3,15 @@
 	<h1>Meet the Team</h1>
 
 	<% @employees.each do |employee| %>
-		<h2><%= @employee.name %></h2>
-		<P><%= @employee.image %></P>
-		<p><%= @employee.bio %></p>
+		<h2><%= employee.name %></h2>
+		<P><%= employee.image %></P>
+		<p><%= employee.bio %></p>
+		<li><%= link_to 'Edit', edit_city_employee_path(@city, employee) %></li>
+		<li><%= link_to 'Delete', [employee.city, employee],
+							method: :delete,
+							data: { confirm: 'Are you sure?' }  %></li>
 	<% end %>
 </body>
 
 <%= link_to "Add an Employee", new_city_employee_path(@city) %>
+<%= link_to "Back to Living List", city_path(@city) %>

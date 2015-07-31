@@ -38,16 +38,17 @@ class EmployeesController < ApplicationController
 
     if @employee.update(employee_params)
       # render 'index'
-      redirect_to city_path(@city) 
+       redirect_to city_employees_path(@city) 
     else
       render 'edit'
     end
   end
 
   def destroy
-    @city = Course.find(params[:city_id])
+    @city = City.find(params[:city_id])
     @employee = @city.employees.find(params[:id])
     @employee.destroy
+    redirect_to city_employees_path(@city) 
   end
 
   private

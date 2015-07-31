@@ -10,7 +10,9 @@ City.delete_all
  
 puts "Creating cities"
  
-cities = City.create([{name: "Cape Town", description: "The Mother City"}, {name: "New York", description: "The Big Apple"}])
+cities = City.create!([{name: "Cape Town", description: "x", image: "http://stock-free-images.net/pictures/24/images/cape-town-south-africa-hd-wallpaper.jpg"}, 
+	 {name: "Johannasburg", description: "x", image: "http://thumbs.dreamstime.com/x/johannesburg-cbd-aerial-view-14146879.jpg"},
+	 {name: "Manchester", description: "x", image: "http://i.telegraph.co.uk/multimedia/archive/02691/townhall_2691886b.jpg"}])
 
 # puts "Creating campaigns"
 
