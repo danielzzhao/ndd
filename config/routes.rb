@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :cities do
     resources :campaigns
     resources :tasks
+    resources :employees 
   end
 
 
@@ -17,6 +18,6 @@ Rails.application.routes.draw do
 
   # Make sure this routeset is defined last
 
-   comfy_route :cms, :path => '/', :sitemap => false
+  comfy_route :cms, :path => '/', :sitemap => false
    
 end

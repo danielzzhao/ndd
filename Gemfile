@@ -28,8 +28,11 @@ gem 'css3-progress-bar-rails'
 gem 'filterrific'
 gem 'will_paginate'
 gem "twitter-bootstrap-rails"
+gem "font-awesome-rails"
+gem 'bootstrap-glyphicons'
 gem 'will_paginate-bootstrap'
 gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
