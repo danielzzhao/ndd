@@ -1,4 +1,18 @@
 body#page-top {
-	background-color: white;
+	background-color: rgb(71,71,71);
 	color: black;
+}
+
+a.btn.btn-default.btn-lg {
+    border: 2px solid rgba(220, 36, 39, 1);
+    color: rgba(220, 36, 39, 1);
+    background-color: transparent;
+}
+
+a.btn.btn-default:hover {
+	background-color: rgba(220, 36, 39, .3);
+}
+
+a {
+	color: rgba(220, 36, 39, 1);
 }
