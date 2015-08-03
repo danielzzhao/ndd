@@ -17,10 +17,12 @@
 			      <h4 class="panel-title">
 			        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index %>" aria-expanded="false" aria-controls="collapse<%= index %>">
 			        <%= task.name %>
-			        <%= link_to 'Edit', edit_city_campaign_path(@city, campaign) %></li>
-						<li><%= link_to 'Delete', [campaign.city, campaign],
+			        <% if user_signed_in? && current_user.admin? %>
+			        <%= link_to 'Edit', edit_city_task_path(@city, task) %>
+					<%= link_to 'Delete', city_tasks_path(@city),
 							method: :delete,
-							data: { confirm: 'Are you sure?' }  %></li>
+							data: { confirm: 'Are you sure?' }  %>
+					<% end %>
 			        <%= progress_bar((task.amount_raised/task.total_amount*100), :color => 'blue', :rounded => true) %>
 			        </a>
 			      </h4>
@@ -54,6 +56,12 @@
 					      <h4 class="panel-title">
 					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=index %>" aria-expanded="false" aria-controls="collapse<%= index %>">
 								<%= task.name %>
+								<% if user_signed_in? && current_user.admin? %>
+								<%= link_to 'Edit', edit_city_task_path(@city, task) %>
+								<%= link_to 'Delete', city_tasks_path(@city, @task),
+								method: :delete,
+								data: { confirm: 'Are you sure?' }  %>
+								<% end %>
 								<%= progress_bar((task.amount_raised/task.total_amount*100), :color => 'blue', :rounded => true) %>
 					        </a>
 					      </h4>
