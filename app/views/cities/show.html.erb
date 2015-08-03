@@ -5,6 +5,10 @@
 		<%= @city.description %>
 		</h1>
 
+		<%= render(
+  partial: 'tasks/index',
+  locals: { tasks: @filterrific }
+) %>
 
 <div class="container">
 	<div class="row">
@@ -76,7 +80,7 @@
 	</div>
 </div>
 
-		
+
 
 		 <%= link_to 'New Task', new_city_task_path(@city) %>
 		 <%= link_to 'Campaigns', city_campaigns_path(@city) %>

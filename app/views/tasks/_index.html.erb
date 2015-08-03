@@ -1,6 +1,6 @@
 <h1>Tasks</h1>
 
-<%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
+<%= form_for_filterrific @filterrific do |f| %>
   <div>
     City
     <%= f.select(
@@ -11,8 +11,12 @@
   </div>
   <div>
   	Complete?
-		<%= f.check_box :with_complete %>
+		<%= f.check_box :with_complete %> Complete Only
   </div>
+<!--   <div>
+    Dreamer?
+		<%= f.check_box :with_dreamer %> Dreamer Only
+  </div> -->
 
   <div>
     <%= link_to(
@@ -24,7 +28,3 @@
   <%= render_filterrific_spinner %>
   <%= f.submit 'Filter' %>
 <% end %>
-<%= render(
-  partial: 'tasks/list',
-  locals: { tasks: @tasks }
-) %>

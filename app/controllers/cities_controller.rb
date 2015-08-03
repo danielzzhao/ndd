@@ -8,6 +8,33 @@ class CitiesController < ApplicationController
 		@city = City.find(params[:id])
 		#@task = @city.tasks.find(params[:id]) idk what this line does?
     	@tasks = @city.tasks.all
+    	@filterrific = initialize_filterrific(
+        Task,
+        params[:filterrific],
+        :select_options => {
+          #sorted_by: Task.options_for_sorted_by,
+          with_city_id: City.options_for_select,
+          with_complete: ['Completed', 'Incomplete'],
+          with_dreamer: ['Completed', 'Incomplete']
+        },
+         persistence_id: 'shared_key',
+        # default_filter_params: {},
+        # available_filters: %w[
+        #   with_city_id
+        #   with_complete
+        #   with_dreamer
+        #   ]
+      ) or return   
+    @tasks = @filterrific.find.page(params[:page])
+
+    # @city = City.find(params[:city_id])
+    # #@task = @city.tasks.find(params[:id])
+    # @tasks = @city.tasks.all
+
+    respond_to do |format|
+    format.html
+    format.js
+    end
 	end
 
 	def new

@@ -6,10 +6,10 @@ class TasksController < ApplicationController
         :select_options => {
           #sorted_by: Task.options_for_sorted_by,
           with_city_id: City.options_for_select,
-          # with_complete: ['Completed', 'Incomplete']
-          # with_dreamer: Task.options_for_select
+          with_complete: ['Completed', 'Incomplete'],
+          with_dreamer: ['Completed', 'Incomplete']
         },
-        # persistence_id: 'false',
+         persistence_id: 'shared_key',
         # default_filter_params: {},
         # available_filters: %w[
         #   with_city_id

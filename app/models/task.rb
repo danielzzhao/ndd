@@ -21,14 +21,15 @@ class Task < ActiveRecord::Base
 
   # filters on 'complete' attribute
 	scope :with_complete, lambda { |flag|
-    return nil  if 0 == flag # checkbox unchecked
+    return nil  if 1 == flag # checkbox unchecked
     where(complete: true)
   }
 
-	# filters on 'dreamer' attribute
-	scope :with_dreamer, lambda { |dreamers|
-	where(dreamer: [*dreamers])
-	}
+	# # filters on 'dreamer' attribute
+	# scope :with_dreamer, lambda { |flag|
+ #    return nil  if 0 == flag # checkbox unchecked
+ #    where(dreamer: true)
+	# }
 
 	#filter sort
 	def self.options_for_sorted_by
