@@ -1,8 +1,30 @@
-<!-- <table>
-  <tr>
-	  <td>Name: <%= @task.name %></td>
-	  <td>Description: <%= @task.description %></td>
-  </tr>
- </table>
+<h1>Tasks</h1>
 
- -->
+<%= form_for_filterrific @filterrific do |f| %>
+  <div>
+    City
+    <%= f.select(
+      :with_city_id,
+      @filterrific.select_options[:with_city_id],
+      { include_blank: '- Any -' }
+    ) %>
+  </div>
+  <div>
+  	Complete?
+		<%= f.check_box :with_complete %> Complete Only
+  </div>
+<!--   <div>
+    Dreamer?
+		<%= f.check_box :with_dreamer %> Dreamer Only
+  </div> -->
+
+  <div>
+    <%= link_to(
+      'Reset filters',
+      reset_filterrific_url,
+    ) %>
+  </div>
+  <%# add an automated spinner to your form when the list is refreshed %>
+  <%= render_filterrific_spinner %>
+  <%= f.submit 'Filter' %>
+<% end %>

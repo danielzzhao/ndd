@@ -5,13 +5,35 @@
 	border-radius: 25px;
 }*/
 
+<<<<<<< HEAD
 </style>
 
+=======
+<% if user_signed_in? && current_user.admin? %>
+<%= link_to 'Add New City', new_city_path %>
+		<% end %>
+>>>>>>> dbb87ffa980ca00e0e8ab1a631a71ae458b05287
 
 <body>
 	<div class="container">
 
+<<<<<<< HEAD
 	<h1>Cities</h1>
+=======
+<% @cities.each do |city| %>
+	<tr></br>
+		<td><%= city.name %></td>
+		<td><%= city.description %></td>
+		<td><%= link_to 'Show', city_path(city) %></td>
+		<% if user_signed_in? && current_user.admin? %>
+		<td><%= link_to 'Edit', edit_city_path(city) %></td>
+		<td><%= link_to 'Delete', city_path(city), 
+			method: :delete,
+				data: { confirm: 'Are you sure?' }  %></td>
+		<% end %>
+	</tr>
+<% end %>
+>>>>>>> dbb87ffa980ca00e0e8ab1a631a71ae458b05287
 
 	<%= link_to 'Add New City', new_city_path %>
 

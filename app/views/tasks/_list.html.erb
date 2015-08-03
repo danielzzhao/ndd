@@ -1,0 +1,20 @@
+<div id="filterrific_results">
+
+
+
+  <table>
+    <tr>
+      <th>City</th>
+      <td>Complete?</td>
+      <td>Dreamer?</td>
+    </tr>
+    <% @tasks.each do |task| %>
+      <tr>
+      <td><%= task.name %></td>
+      <td><%= task.complete %></td>
+      <td><%= task.dreamer %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+

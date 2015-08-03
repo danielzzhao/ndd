@@ -15,4 +15,5 @@
 //= require twitter/bootstrap
 //= require grayscale
 //= require turbolinks
+//= require filterrific/filterrific-jquery
 //= require_tree .

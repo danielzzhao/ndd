@@ -1,5 +1,6 @@
 class CitiesController < ApplicationController
-
+	before_action :authorize_admin!, except: [:index, :show, :ambassador]
+	
 
 	def index
 		@cities = City.all
@@ -7,7 +8,7 @@ class CitiesController < ApplicationController
 
 	def show
 		@city = City.find(params[:id])
-		#@task = @city.tasks.find(params[:id])
+		#@task = @city.tasks.find(params[:id]) idk what this line does?
     	@tasks = @city.tasks.all
 	end
 
@@ -47,6 +48,12 @@ class CitiesController < ApplicationController
 	end 
 
 	def ambassador
+	end
+
+	def authorize_admin!
+		unless current_user.admin?
+			redirect_to :root, alert: "You cant do that!"
+		end
 	end
 
 	def city_params
