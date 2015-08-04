@@ -10,13 +10,9 @@
 
 
 <body>
-	<div class="container">
-	<h1>Cities</h1>
 <% @cities.each do |city| %>
 	<tr></br>
-		<td><%= city.name %></td>
-		<td><%= city.description %></td>
-		<td><%= link_to 'Show', city_path(city) %></td>
+		<td><%= link_to city.name, city_path(city) %>  
 		<% if user_signed_in? && current_user.admin? %>
 		<td><%= link_to 'Edit', edit_city_path(city) %></td>
 		<td><%= link_to 'Delete', city_path(city), 
@@ -26,7 +22,7 @@
 	</tr>
 <% end %>
 
-</br><%= link_to "Don't see your city?", cities_ambassador_path %>
+</br>Don't see your city? <%= link_to "Learn about the Ambassador Program", cities_ambassador_path %>
 
 <% if user_signed_in? && current_user.admin? %>
 <%= link_to 'Add New City', new_city_path %>

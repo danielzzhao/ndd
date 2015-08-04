@@ -1,5 +1,5 @@
 body#page-top {
-	background-color: rgb(71,71,71);
+	background-color: white;
 	color: black;
 }
 
@@ -15,4 +15,42 @@ a.btn.btn-default:hover {
 
 a {
 	color: rgba(220, 36, 39, 1);
+}
+
+section#about {
+  padding-top: 150px;
+  padding-bottom: 300px;
+ }
+
+section#cities {
+  padding-top: 150px;
+  padding-bottom: 300px;
+ }
+
+
+section#contact {
+  padding-top: 150px;
+  padding-bottom: 163px;
+}
+
+section#download {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+h2 {
+	font-size: 40px;
+}
+
+nav.navbar.navbar-custom.navbar-fixed-top.top-nav-collapse {
+	background-color: rgb(30,30,30);
+	border-bottom: rgb(30,30,30);
+}
+
+.video {
+	padding-top: 200px;
+}
+
+.logo {
+	position: top;
 }

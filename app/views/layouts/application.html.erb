@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%= yield %>
 <p class="navbar-text pull-right">
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>. |
@@ -22,7 +23,7 @@
 	<% if alert %>
 	  <p class="alert alert-danger"><%= alert %></p>
 	<% end %>
-<%= yield %>
+
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
