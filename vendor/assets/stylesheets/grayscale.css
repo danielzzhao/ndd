@@ -45,7 +45,7 @@ p {
 }
 
 a {
-    color: #42dca3;
+    color: white;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
@@ -54,7 +54,7 @@ a {
 a:hover,
 a:focus {
     text-decoration: none;
-    color: #1d9b6c;
+    color: rgba(220, 36, 39, 1);
 }
 
 .light {
@@ -147,18 +147,13 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    /*background: url('http://i.imgur.com/MevcO5p.jpg');*/ 
+    background: url("http://i.imgur.com/5roBCVp.jpg") no-repeat bottom center scroll;
     background-color: #000;
-    -webkit-background-size: cover;
-    -webkit-background-position: center;
-   -moz-background-size: cover;
-   -moz-background-position: center;
-     background-size: 100% 100%;
-    height: 100%;
-    text-indent: -9999px;
-    margin-bottom:10px;
-    padding-bottom: 10px;
-
+/*    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+*/
 }
 
 .intro .intro-body {
