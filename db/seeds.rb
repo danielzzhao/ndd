@@ -10,9 +10,9 @@ City.delete_all
  
 puts "Creating cities"
  
-cities = City.create!([{name: "Cape Town", description: "x", image: "http://stock-free-images.net/pictures/24/images/cape-town-south-africa-hd-wallpaper.jpg"}, 
-	 {name: "Johannasburg", description: "x", image: "http://thumbs.dreamstime.com/x/johannesburg-cbd-aerial-view-14146879.jpg"},
-	 {name: "Manchester", description: "x", image: "http://i.telegraph.co.uk/multimedia/archive/02691/townhall_2691886b.jpg"}])
+cities = City.create!([{name: "Cape Town", description: "x", image: "https://mail.google.com/mail/u/0/?ui=2&ik=ee619d5fa1&view=fimg&th=14ef7cf7327499d1&attid=0.2&disp=inline&realattid=f_icx2v2an2&safe=1&attbid=ANGjdJ8kr4wp5_wrejpXjflZhJj1rGAAydf9T6WAl5lVnZX6ed0YVgvPSa_KcDuHZInI6HHRB5ndb7jYzUuZgWfmJu35skZCdgA9EIWTFWhJHAj6MyfUs8XXQCUFvX4&ats=1438696901520&rm=14ef7cf7327499d1&zw&sz=w1367-h603"}, 
+	 {name: "Johannesburg", description: "x", image: "https://mail.google.com/mail/u/0/?ui=2&ik=ee619d5fa1&view=fimg&th=14ef7cf7327499d1&attid=0.3&disp=inline&realattid=f_icx2wdnh3&safe=1&attbid=ANGjdJ9QBKR9mx9zwF1T5zR1DgQobhkRd-vNz9vt_ITfdtbICTts6wWrEzDUDWbUNJx6SgaMS1wksxC0Ohwc_Jgj9IamBLs3_aIjIdXTlyZ2Nf-QRBIff03jcPeNztE&ats=1438696901520&rm=14ef7cf7327499d1&zw&sz=w1367-h603"},
+	 {name: "Manchester", description: "x", image: "https://mail.google.com/mail/u/0/?ui=2&ik=ee619d5fa1&view=fimg&th=14ef7cf7327499d1&attid=0.1&disp=inline&realattid=f_icx2utc71&safe=1&attbid=ANGjdJ_5aruD_-ro1B8hAXlhlvcXP2SA2V6YgrEJBgvKfRxS46PwrJ7XDtx32-wOmUK6r-I1iBlvBXNqXcpJ9EhRodBcBZg6-QNfVYGcvPUvk_7ufv83HzTyGfq8l_s&ats=1438696901520&rm=14ef7cf7327499d1&zw&sz=w1367-h603"}])
 
 # puts "Creating campaigns"
 

@@ -10,17 +10,24 @@
 
 
 <body>
+<div class= "container">
 <% @cities.each do |city| %>
-	<tr></br>
-		<td><%= link_to city.name, city_path(city) %>  
-		<% if user_signed_in? && current_user.admin? %>
-		<td><%= link_to 'Edit', edit_city_path(city) %></td>
-		<td><%= link_to 'Delete', city_path(city), 
-			method: :delete,
-				data: { confirm: 'Are you sure?' }  %></td>
-		<% end %>
-	</tr>
+	<div class= "row">
+		<div class= 'col-md-4'>
+			<tr></br>
+				<td><%= image_tag city.image %></td>
+				<td><%= link_to city.name, city_path(city) %>  
+				<% if user_signed_in? && current_user.admin? %>
+				<td><%= link_to 'Edit', edit_city_path(city) %></td>
+				<td><%= link_to 'Delete', city_path(city), 
+					method: :delete,
+						data: { confirm: 'Are you sure?' }  %></td>
+				<% end %>
+			</tr>
+		</div>
+	</div>
 <% end %>
+</td>
 
 </br>Don't see your city? <%= link_to "Learn about the Ambassador Program", cities_ambassador_path %>
 
